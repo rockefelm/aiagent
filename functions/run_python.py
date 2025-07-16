@@ -37,7 +37,7 @@ def run_python_file(working_directory, file_path, args=[]):
     return "\n".join(output_parts)
 
 schema_run_python_file = types.FunctionDeclaration(
-    name="run_python",
+    name="run_python_file",
     description="Runs a .py file constrained to the working directory.",
     parameters=types.Schema(
         type=types.Type.OBJECT,
@@ -50,7 +50,7 @@ schema_run_python_file = types.FunctionDeclaration(
                 type=types.Type.ARRAY,
                 items=types.Schema(
                     type=types.Type.STRING,
-                    description="Optional arguments to pass to the Python file.",
+                    description="Optional arguments to pass to the Python file. If not provided, the file will be executed with a white space as the only argument.",
                 ),
             ),
         },
